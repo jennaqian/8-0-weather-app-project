@@ -1,0 +1,40 @@
+
+
+#body-container {
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "main main main main";
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    grid-gap: 10px;
+}
+
+#header {
+    grid-area: header;
+    background-color: #5fa0f5;
+    color:white;
+    padding: 20px;
+}
+
+#main {
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 
+    "display display display history";
+    grid-gap: 10px;
+}
+
+.display {
+    grid-area: display;
+    background-color: #f2f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.history {
+    grid-area: history;
+    text-align: left;
+}
