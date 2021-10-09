@@ -3,6 +3,7 @@ const displayContent = document.querySelector("#display-content");
 let createForecastToday = document.createElement("div");
 let createForecastTomorrow = document.createElement("div");
 let createForecastNextTwoDays = document.createElement("div");
+const ul = document.querySelector("ul")
 
 const forecast = document.querySelector("#forecast");
 forecast.append(
@@ -23,7 +24,7 @@ function getWeather(inputCity) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+    //   console.log(data);
 
       let cityHeading = data.nearest_area[0].areaName[0].value;
       let cityRegion = data.nearest_area[0].region[0].value;
@@ -77,5 +78,11 @@ function getWeather(inputCity) {
         <span><strong>Min Temperature: </strong>${nextTwoDaysMinTemp}&#176;F</span>
         </p> 
         `;
+
+        const selectHistoryDefaultText = document.querySelector("#history-default-text")
+        selectHistoryDefaultText.setAttribute("style", "display:none")
+        let createHistoryList = document.createElement("li")
+        createHistoryList.textContent = `${cityHeading} - ${cityCurrentlyFeelsLifeInFarenheit}\u00B0F`;
+        ul.append(createHistoryList)
     });
 }
