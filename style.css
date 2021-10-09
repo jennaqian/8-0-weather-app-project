@@ -1,78 +1,42 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#body-container {
-    width: 67%;
     display: grid;
-    grid-template-areas:
-    "header header header header header"
-    "content content content content content";
-    grid-gap: 20px;
+    grid-template-areas: 
+    "header header header header"
+    "display display display history";
+    width: 65%;
     margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
     background-color: #0f706d;
-    border: 2px solid black;
-    text-align: center;
-    padding: 30px;
     grid-area: header;
     color: white;
-}
-
-#content {
-    width: 100%;
-    display: grid;
-    grid-area: content;
-    grid-template-areas: 
-    "display display display display history"
-    "forecast forecast forecast forecast history";
-    margin-left: 15px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid black;
 }
 
 .display {
-    background-color: lightgray;
-    border: 2px solid #0f706d;
     grid-area: display;
-    text-align: center;
-}
-
-.display-default-text {
-    display: flex;
-    justify-content: center;
-    line-height: 60px;
-}
-
-.display-data span{
-    display: block;
-    margin: 10px;
-}
-
-.history {
-    grid-area: history;
-    margin-left: 20px;
-}
-
-#location-input {
-    width: 150px;
-    outline: 0;
-}
-
-
-
-#forecast {
-    grid-area: forecast;
     display: grid;
     grid-template-areas: 
-    "today tomorrow dayAfterTomorrow";
+    "content content content"
+    "forecast forecast forecast";
+    margin:10px;
 }
-#today {
-    grid-area: today;
+#display-content {
+    grid-area: content;
+    background-color: lightgray;
+    border: 1px solid #0f706d;
 }
-#tomorrow {
-    grid-area: tomorrow;
+#display-content p{
+    text-align: center;
+    line-height: 50px;
 }
-#dayAfterTomorrow {
-    grid-area: dayAfterTomorrow;
+#forecast {
+    grid-area: forecast;
+}
+#previous-searches {
+    margin:10px;
 }
