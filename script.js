@@ -29,7 +29,7 @@ function getWeather(inputCity, isTrue) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      //   console.log(data);
+      // console.log(data);
 
       cityHeading = data.nearest_area[0].areaName[0].value;
       let cityRegion = data.nearest_area[0].region[0].value;
@@ -54,17 +54,16 @@ function getWeather(inputCity, isTrue) {
       let tomorrowMinTemp = data.weather[1].mintempF;
       let nextTwoDaysAvgTemp = data.weather[2].avgtempF;
       let nextTwoDaysMaxTemp = data.weather[2].maxtempF;
-      let nextTwoDaysMinTemp = data.weather[1].mintempF;
+      let nextTwoDaysMinTemp = data.weather[2].mintempF;
 
       createForecastToday.innerHTML = `
             <h4>Today</h4>
-            <p class="display-today">
             <span><strong>Average Temperature: </strong>${todayAvgTemp}&#176;F</span>
             <span><strong>Max Temperature: </strong>${todayMaxTemp}&#176;F</span>
             <span><strong>Min Temperature: </strong>${todayMinTemp}&#176;F</span>
-            </p> 
             `;
-
+      // <p class="display-today">
+      // </p>
       createForecastTomorrow.innerHTML = `
             <h4>Tomorrow</h4>
             <p class="display-tomorrow">
