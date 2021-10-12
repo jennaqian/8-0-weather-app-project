@@ -1,62 +1,190 @@
 body {
-    display: grid;
-    grid-template-areas: 
+  display: grid;
+  grid-template-areas:
     "header header header header"
     "display display display history";
-    width: 65%;
-    margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
+  width: 65%;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
+  background-color: #0f706d;
+  grid-area: header;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.display {
+  grid-area: display;
+  display: grid;
+  grid-template-areas:
+    "content content content"
+    "forecast forecast forecast";
+  margin: 10px;
+}
+#display-content {
+  grid-area: content;
+  background-color: lightgray;
+  border: 1px solid #0f706d;
+}
+#display-content p {
+  text-align: center;
+  line-height: 30px;
+}
+#forecast {
+  grid-area: forecast;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+#forecast h4 {
+  text-align: center;
+}
+#previous-searches {
+  margin: 10px;
+}
+
+.display-data span,
+.display-today span,
+.display-tomorrow span,
+.display-next-two-days span {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#display-content h2 {
+  text-align: center;
+}
+#location-input {
+  outline: none;
+}
+
+/* This is medium screen */
+@media (max-width: 768px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "display"
+      "history";
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #previous-searches {
+    text-align: center;
+    border: 2px dashed #0f706d;
+  }
+  #previous-searches ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    padding: 0;
+  }
+
+  #previous-searches ul li {
+    text-align: center;
+    list-style-type: none;
+    padding-bottom: 10px;
+  }
+}
+/* This is the smallest screen */
+@media (max-width: 480px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "display"
+      "history";
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #previous-searches {
+    text-align: center;
+    border: 2px dashed #0f706d;
+  }
+  #previous-searches ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    padding: 0;
+  }
+  #previous-searches ul li {
+    text-align: center;
+    list-style-type: none;
+    padding-bottom: 10px;
+  }
+  #forecast {
+    font-size: small;
+  }
+}
+
+/* This is biggest screen*/
+@media (min-width: 769px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header header header"
+      "display display display history";
+    width: 65%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
     background-color: #0f706d;
     grid-area: header;
     color: white;
     text-align: center;
     padding: 20px;
     border: 2px solid black;
-}
+  }
 
-.display {
+  .display {
     grid-area: display;
     display: grid;
-    grid-template-areas: 
-    "content content content"
-    "forecast forecast forecast";
-    margin:10px;
-}
-#display-content {
+    grid-template-areas:
+      "content content content"
+      "forecast forecast forecast";
+    margin: 10px;
+  }
+  #display-content {
     grid-area: content;
     background-color: lightgray;
     border: 1px solid #0f706d;
-}
-#display-content p{
+  }
+  #display-content p {
     text-align: center;
     line-height: 30px;
-}
-#forecast {
+  }
+  #forecast {
     grid-area: forecast;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-}
-#forecast h4 {
+  }
+  #forecast h4 {
     text-align: center;
-}
-#previous-searches {
-    margin:10px;
-}
+  }
+  #previous-searches {
+    margin: 10px;
+  }
 
-.display-data span, .display-today span,
-.display-tomorrow span,
-.display-next-two-days span{
+  .display-data span,
+  .display-today span,
+  .display-tomorrow span,
+  .display-next-two-days span {
     display: block;
     text-align: center;
     margin-bottom: 10px;
-}
-#display-content h2 {
+  }
+  #display-content h2 {
     text-align: center;
-}
-#location-input {
+  }
+  #location-input {
     outline: none;
+  }
 }
